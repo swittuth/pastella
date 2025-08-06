@@ -36,7 +36,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   /**
    * The content of the button
    */
-  children: React.ReactNode
+  children: React.ReactNode | string
 }
 
 /**
