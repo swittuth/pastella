@@ -1,0 +1,193 @@
+/* Button Component Styles using Bloom Design System tokens */
+
+.button {
+  /* Base button styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-component-xs);
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-normal);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  
+  /* Focus styles */
+  &:focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+  }
+  
+  /* Disabled styles */
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+/* === SIZE VARIANTS === */
+.sm {
+  padding: var(--spacing-component-xs) var(--spacing-component-sm);
+  font-size: var(--text-sm);
+  min-height: 2rem;
+}
+
+.md {
+  padding: var(--spacing-component-sm) var(--spacing-component-md);
+  font-size: var(--text-base);
+  min-height: 2.5rem;
+}
+
+.lg {
+  padding: var(--spacing-component-md) var(--spacing-component-lg);
+  font-size: var(--text-lg);
+  min-height: 3rem;
+}
+
+/* === VARIANT STYLES === */
+.primary {
+  background-color: var(--color-primary-500);
+  color: var(--color-neutral-0);
+  border-color: var(--color-primary-500);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-600);
+    border-color: var(--color-primary-600);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.secondary {
+  background-color: var(--color-secondary-500);
+  color: var(--color-neutral-0);
+  border-color: var(--color-secondary-500);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-secondary-600);
+    border-color: var(--color-secondary-600);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.tertiary {
+  background-color: var(--color-surface-primary);
+  color: var(--color-primary-600);
+  border-color: var(--color-primary-200);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-50);
+    border-color: var(--color-primary-300);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    background-color: var(--color-primary-100);
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: transparent;
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-surface-pastel-1);
+    color: var(--color-primary-600);
+  }
+  
+  &:active:not(:disabled) {
+    background-color: var(--color-primary-100);
+  }
+}
+
+.danger {
+  background-color: var(--color-error-500);
+  color: var(--color-neutral-0);
+  border-color: var(--color-error-500);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-error-600);
+    border-color: var(--color-error-600);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* === LAYOUT MODIFIERS === */
+.fullWidth {
+  width: 100%;
+}
+
+/* === LOADING STATE === */
+.loading {
+  color: transparent;
+  
+  .content {
+    opacity: 0;
+  }
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* === ICON POSITIONING === */
+.startIcon {
+  display: flex;
+  align-items: center;
+  font-size: 0.875em;
+}
+
+.endIcon {
+  display: flex;
+  align-items: center;
+  font-size: 0.875em;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease-in-out;
+}
